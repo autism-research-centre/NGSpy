@@ -30,11 +30,34 @@ The pipeline has the following structure:
         - Performs Structural Variant calling
     
 
+Each of these steps have a dedicated python scriot meant to be submitted in a high performance computing cluster through SLURM
+
+
 # REQUIREMENTS
 
 
 ## Software Requirements
 
+The pipeline has several software dpendencies:
+
+Stage | Dependencies    | Internal dependencies
+------------ | -------------| ---------------
+ALL | samtools (currently running with Version: 0.1.19)|  -     
+0-CONVERT | bam2fastx |     -       
+1-QC      | sickle |       -       
+   "     | trim-galore | cutadapt
+2-Mapping | bwa-mem (version 0.6 or higher)|     -       
+3-PICARD | PICARD tools |     -     
+4-GATK | Genome Analysis ToolKit (version 3.7-0)|    -    
+5-VC | Genome Analysis ToolKit (version 3.7-0)|    -
+  "  | VARSCAN |   -
+6-Filtering and Annotation | Genome Analysis ToolKit (version 3.7-0)|    -
+" |SNPEff (version 4.3) | - 
+7- CNV | CNVnator | root
+" |erds (version 1.1)|
+8-SV | Breakdancer | - 
+" | Pindel | -
+" | Delly | - 
 
 
 ## Data Requirements
