@@ -38,9 +38,9 @@ Each of these steps has a dedicated python script meant to be submitted in a hig
 
 ## Software Requirements
 
-The pipeline has several software dpendencies:
+The pipeline has several software dpendencies which may also have secondary dependencies
 
-Stage | Dependencies    | Internal dependencies
+Stage | Dependencies    | Secondary dependencies
 ------------ | -------------| ---------------
 ALL | samtools (currently running with Version: 0.1.19)|  -     
 0-CONVERT | bam2fastx |     -       
@@ -62,7 +62,7 @@ ALL | samtools (currently running with Version: 0.1.19)|  -
 
 ## Data Requirements
 
-Many of the step use external data:
+Many of the step uses external data:
 
 
 Stage | Data file    | Example: current file name 
