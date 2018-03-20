@@ -30,7 +30,7 @@ The pipeline has the following structure:
         - Performs Structural Variant calling
     
 
-Each of these steps have a dedicated python scriot meant to be submitted in a high performance computing cluster through SLURM
+Each of these steps has a dedicated python script meant to be submitted in a high performance computing cluster through SLURM
 
 
 # REQUIREMENTS
@@ -50,7 +50,7 @@ ALL | samtools (currently running with Version: 0.1.19)|  -
 3-PICARD | PICARD tools |     -     
 4-GATK | Genome Analysis ToolKit (version 3.7-0)|    -    
 5-VC | Genome Analysis ToolKit (version 3.7-0)|    -
-  "  | VARSCAN |   -
+  "  | VARSCAN (version 2.3)|   -
 6-Filtering and Annotation | Genome Analysis ToolKit (version 3.7-0)|    -
 " |SNPEff (version 4.3) | - 
 7- CNV | CNVnator | root
@@ -61,3 +61,21 @@ ALL | samtools (currently running with Version: 0.1.19)|  -
 
 
 ## Data Requirements
+
+Many of the step use external data:
+
+
+Stage | Data file    | Example: current file name 
+------------ | -------------| -------------
+2-Mapping | Reference Genome| Ensembl_GRCh37.ordered.fa
+4-GATK | Reference Genome| Ensembl_GRCh37.ordered.fa
+"      | Known SNPs | 1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz
+"      | Known Indels | Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz
+5-VC | Reference Genome| Ensembl_GRCh37.ordered.fa
+"      | Known SNPs | 1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz
+"      | Known Indels | Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz
+6-Filtering and Annotation | Reference Genome| Ensembl_GRCh37.ordered.fa
+"      | ExAC | ExAC.r0.3.1.sites.vep.vcf
+7- CNV | Reference Genome| Ensembl_GRCh37.ordered.fa
+8- SV | Reference Genome| Ensembl_GRCh37.ordered.fa
+
