@@ -9,7 +9,7 @@ Most scripts are python wrappers for common  Bioinfortmatics tools.
 
 # PIPELINE Structure
 
-The pipeline has the following structure:
+The pipeline consists of several stages described as follows.
 
     0. CONVERT
         - Converting bam files (provided by the sequencing platform/company) into paired-end fastq files
@@ -63,7 +63,7 @@ ALL | samtools (currently running with Version: 0.1.19)|  -
 
 ## Data Requirements
 
-Many of the step uses external data:
+Many of the stages use external data:
 
 
 Data file    | Example: current file name | Stage where used
