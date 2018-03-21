@@ -65,17 +65,9 @@ ALL | samtools (currently running with Version: 0.1.19)|  -
 Many of the step uses external data:
 
 
-Stage | Data file    | Example: current file name 
+Data file    | Example: current file name | Stage where used
 ------------ | -------------| -------------
-2-Mapping | Reference Genome| Ensembl_GRCh37.ordered.fa
-4-GATK | Reference Genome| Ensembl_GRCh37.ordered.fa
-"      | Known SNPs | 1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz
-"      | Known Indels | Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz
-5-VC | Reference Genome| Ensembl_GRCh37.ordered.fa
-"      | Known SNPs | 1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz
-"      | Known Indels | Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz
-6-Filtering and Annotation | Reference Genome| Ensembl_GRCh37.ordered.fa
-"      | ExAC | ExAC.r0.3.1.sites.vep.vcf
-7- CNV | Reference Genome| Ensembl_GRCh37.ordered.fa
-8- SV | Reference Genome| Ensembl_GRCh37.ordered.fa
-
+Reference Genome| Ensembl_GRCh37.ordered.fa | 2-Mapping <br> 4-GATK <br> 5-VC <br> 6-Filtering and Annotation <br> 7-CNV <br> 8-SV
+Known SNPs | 1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz | 4-GATK <br> 5-VC
+Known Indels | Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz | 4-GATK <br> 5-VC
+ExAC | ExAC.r0.3.1.sites.vep.vcf | 6-Filtering and Annotation 
