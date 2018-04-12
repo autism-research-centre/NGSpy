@@ -12,3 +12,10 @@ This folder contains:
   1. The main script:  	CONVERTscript.py
   2. The submission script:  	submitCONVERTscript.py
 
+## Dependencies
+This step makes use of two external softwares: 
+   * Samtools (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) for converting bam to sam and sam to bam
+   * bam2fastx (https://github.com/najoshi/sickle) for converting bam to fastq
+  
+  
+
