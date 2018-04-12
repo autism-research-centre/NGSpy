@@ -8,7 +8,7 @@ import re
 indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF0/input/")
 outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF0/output/fastq/")
 
-
+# This will take all the bam files and generate a list with the basename (ID name of the sample) and a list of files.
 bnlist=[]
 r=[]
 # identify mapped.sorted.bam files
@@ -21,13 +21,13 @@ for file in os.listdir(indir):
 			bnlist.append(fbasename)
 			r.append(indir + "/" + fbasename + ".bam")
 
-
+# Run CONVERTscript.py parallely for each file
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
 	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/CONVERTscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
 	print "sbatch --partition=LONG /mnt/DATA/home4/arc/hb493/bin/submit_sbatch0.sh"
 	print "export SBATCH_CMD=\"\""
 
-#	print ("python CONVERTscript.py " + bnlist[i] + " " + r[i] + " " + outdir)
+
 
 
