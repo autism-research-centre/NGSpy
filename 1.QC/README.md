@@ -12,3 +12,8 @@ This folder contains:
   1. The main script:  	QCscript.py
   2. The submission script:  	submitQCscript.py
 
+## Dependencies:
+This step makes use of two external softwares: 
+   * Trim-galore (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)
+   * Sickle (https://github.com/najoshi/sickle)
+
