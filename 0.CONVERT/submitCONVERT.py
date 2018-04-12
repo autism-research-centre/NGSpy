@@ -8,7 +8,11 @@ import re
 indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF0/input/")
 outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF0/output/fastq/")
 
-# This will take all the bam files and generate a list with the basename (ID name of the sample) and a list of files.
+# This will:
+#     - Identify the bam files in the input folder
+#     - Generate a list of bam files to be processed.
+#     - Generate a list with the basename (ID name of the sample) 
+
 bnlist=[]
 r=[]
 # identify mapped.sorted.bam files
