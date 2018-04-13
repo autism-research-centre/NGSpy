@@ -10,7 +10,7 @@ However, there are reports showing other variant callers that can outperform GAT
 For most applications, a comprehensive strategy combining GATK variant calls with those made by another method (such as Samtools or Varscan) is likely to provide the most comprehensive result. 
 Combining multiple calling approaches improves both sensitivity and specificity of the final set of variants.
 
-Here both GATK HaplotypeCaller and Varscan are applied. GATKHC remains the preferred option. 
+Here, both GATK HaplotypeCaller and Varscan are applied. GATKHC remains the preferred option. 
 As every step of the pipeline, it is designed to be submitted to the cluster for sets of files (for example families) simultaneously.
 Slurm is used for submitting the jobs to the cluster. 
 
