@@ -30,17 +30,17 @@ outab = outdir + "/" + basename + ".QC.MAP.s.MDup.RGr.BRec-table.grp"
 out = outdir + "/" + basename + ".QC.MAP.s.MDup.RGr.BRec.bam"
 
 #reassign mapped reads quality 255 -> 60 (only BOWTIE)
-# cmnd = "java -jar /mnt/DATA/home4/arc/hb493/bin/GenomeAnalysisTK.jar -T PrintReads -R " + ref + " -I " + f1 + " -o " + out1 + " -rf ReassignOneMappingQuality -RMQF 255 -RMQT 60 " 
+# cmnd = "java -jar GenomeAnalysisTK.jar -T PrintReads -R " + ref + " -I " + f1 + " -o " + out1 + " -rf ReassignOneMappingQuality -RMQF 255 -RMQT 60 " 
 # print(cmnd)
 # os.system(cmnd)
 
 # generate a base recalibration table 
-cmnd = "java -jar /mnt/beegfs/home4/arc/hb493/bin/GenomeAnalysisTK.jar -T BaseRecalibrator -R " + ref + " -I " + f1 + " -o " + outab + " --knownSites " + knownSNPs + " -nct 8 --disable_auto_index_creation_and_locking_when_reading_rods -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
+cmnd = "java -jar GenomeAnalysisTK.jar -T BaseRecalibrator -R " + ref + " -I " + f1 + " -o " + outab + " --knownSites " + knownSNPs + " -nct 8 --disable_auto_index_creation_and_locking_when_reading_rods -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
 print(cmnd)
 os.system(cmnd)
 
 #Recalibrate bam file
-cmnd = "java -jar /mnt/beegfs/home4/arc/hb493/bin/GenomeAnalysisTK.jar -T PrintReads -R " + ref + " -I " + f1 + " -BQSR " + outab + " -o " + out + " -nct 8"
+cmnd = "java -jar GenomeAnalysisTK.jar -T PrintReads -R " + ref + " -I " + f1 + " -BQSR " + outab + " -o " + out + " -nct 8"
 print(cmnd)
 os.system(cmnd)
 
@@ -49,12 +49,12 @@ os.system(cmnd)
 out2 = outdir + "/" + basename + ".QC.MAP.s.MDup.RGr.BRec.IReal.bam"
 outint = outdir + "/" + basename + ".intervals"
 #create intervals
-cmnd =  "java -jar /mnt/beegfs/home4/arc/hb493/bin/GenomeAnalysisTK.jar -T RealignerTargetCreator -R " + ref + " -I " + out + " -known " + knownIndels + " -o " + outint + " -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
+cmnd =  "java -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -R " + ref + " -I " + out + " -known " + knownIndels + " -o " + outint + " -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
 print(cmnd)
 os.system(cmnd)
 
 # realign
-cmnd = "java -jar /mnt/beegfs/home4/arc/hb493/bin/GenomeAnalysisTK.jar -T IndelRealigner -R " + ref + " -I " + out + " -known " + knownIndels + " -o " + out2 + " -targetIntervals " + outint + " -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
+cmnd = "java -jar GenomeAnalysisTK.jar -T IndelRealigner -R " + ref + " -I " + out + " -known " + knownIndels + " -o " + out2 + " -targetIntervals " + outint + " -U ALLOW_SEQ_DICT_INCOMPATIBILITY"
 print(cmnd)
 os.system(cmnd)
 
