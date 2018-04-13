@@ -14,7 +14,7 @@ This folder contains:
   2. The submission script:  	submitBWAMEMscript.py (and submitBOWTIEscript.py)
 
 ## Dependencies:
-This step makes use of several external softwares: 
+This step makes use of the following software(s):
    * BWA-MEM (http://bio-bwa.sourceforge.net/)
    * BOWTIE2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
    * Samtools for indexing, sorting and merging 
