@@ -5,7 +5,7 @@ Mapping refers to the process of aligning short reads to the complete reference 
 
 Two methods have been tested in order to select the optimal mapping tool for these samples. Those are BWA-MEM and BOWTIE2.
 
-BWA-MEM was finally chosed for the final version of the pipeline but BOWTIE2-related scripts are keeped for their eventual use in the future
+BWA-MEM was finally chosen as the aligner for this pipeline but BOWTIE2-related scripts are keeped for their eventual use in the future.
 As every step of the pipeline, it is designed to be submitted to the cluster for sets of files (for exmaple families) simultaneously.
 Slurm is used for submitting the jobs to the cluster. 
 
