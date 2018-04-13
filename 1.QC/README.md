@@ -14,6 +14,6 @@ This folder contains:
 
 ## Dependencies:
 This step makes use of two external softwares: 
-   * Trim-galore (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)
-   * Sickle (https://github.com/najoshi/sickle)
+   * Trim-galore (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) for quality and adapter trimming 
+   * Sickle (https://github.com/najoshi/sickle) for adaptive quality trimming
 
