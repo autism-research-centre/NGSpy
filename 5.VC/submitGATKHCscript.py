@@ -25,7 +25,7 @@ for file in os.listdir(indir):
 	
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python GATKcallingscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
+	print "export SBATCH_CMD=\"python GATKHCscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
 	print "sbatch --partition=LONG submit_sbatch6.sh"
 	print "export SBATCH_CMD=\"\""
 
