@@ -42,20 +42,24 @@ os.system(cmnd)
 
 outm = outdir + "/" + basename + ".QC.MAP.s.m.bam"
 
-# IF R9 is TRUE
+# IF R9 is TRUE (if there is a SE file)
 if (r9 == True):
+	#BWA-MEM
 	out9 = outdir + "/" + basename + ".9.QC.MAP.sam"
 	cmnd = "bwa mem -M -t 16 /mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.fa " + f9 + " > " + out9
 	print(cmnd)
 	os.system(cmnd)
+	#SAM to BAM
 	outb9 = outdir + "/" + basename + ".9.QC.MAP.bam"
 	cmnd = "samtools_mt  view -@ 8 -b -1 " + out9 + " > " + outb9
 	print(cmnd)
 	os.system(cmnd)
+	#SORT
 	outsort9   = outdir + "/" + basename + ".9.QC.MAP.s.bam"
 	cmnd = "samtools_mt sort -@ 8 " + outb9 + " -o " + outsort9
 	print(cmnd)
 	os.system(cmnd)
+	#MERGE
 	cmnd = "samtools_mt merge -f " + outm + " " + outsort + " " + outsort9
 	print(cmnd)
 	os.system(cmnd)
