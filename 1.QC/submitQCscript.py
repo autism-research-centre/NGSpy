@@ -5,11 +5,10 @@ import os.path
 import re
 
 #define input and output folders
-indir = "/mnt/DATA/home4/arc/hb493/GF0/output/fastq/"
-outdir = "/mnt/DATA/home4/arc/hb493/GF0/output/QC/"
+indir = "path/indir" #CONVERT output dir
+outdir = "path/outdir"
 
-#input_dir = os.path.dirname(/mnt/DATA/home4/arc/hb493/Rimma_fastq)
-#output_dir = os.path.dirname(/mnt/DATA/home4/arc/hb493/Rimma_fastq)
+
 bnlist=[]
 endlist=[]
 nfiles =[]
@@ -59,8 +58,8 @@ for i in range(len(bnlist)):
 
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/QCscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i] + " 4 " + outdir + " " + r9[i] + "\""
-	print "sbatch --partition=LONG /mnt/DATA/home4/arc/hb493/bin/submit_sbatch1.sh -n 4" 
+	print "export SBATCH_CMD=\"python QCscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i] + " 4 " + outdir + " " + r9[i] + "\""
+	print "sbatch --partition=LONG submit_sbatch1.sh -n 4" 
 	print "export SBATCH_CMD=\"\""
 
 #	print ("python QCscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i])
