@@ -24,7 +24,7 @@ if (len(sys.argv) >=6):
 # Run bwa-mem
 
 out = outdir + "/" + basename + ".QC.MAP.sam"
-cmnd = "bwa mem -M -t 24 /mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.fa " + f1 + " " + f2 +" > " + out
+cmnd = "bwa mem -M -t 24 Ensembl_GRCh37.fa " + f1 + " " + f2 +" > " + out
 print(cmnd)
 os.system(cmnd)
 
@@ -46,7 +46,7 @@ outm = outdir + "/" + basename + ".QC.MAP.s.m.bam"
 if (r9 == True):
 	#BWA-MEM
 	out9 = outdir + "/" + basename + ".9.QC.MAP.sam"
-	cmnd = "bwa mem -M -t 16 /mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.fa " + f9 + " > " + out9
+	cmnd = "bwa mem -M -t 16 Ensembl_GRCh37.fa " + f9 + " > " + out9
 	print(cmnd)
 	os.system(cmnd)
 	#SAM to BAM
