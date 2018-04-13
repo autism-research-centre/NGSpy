@@ -5,11 +5,9 @@ import os.path
 import re
 
 #define input and output folders
-# indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF20/output/QC/")
-# outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF20/output/b37/BWAMEM/")
 
-indir = os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/QC/output/")
-outdir = os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/MAPPING/output/")
+indir = os.path.dirname("path/indir") # QC output dir
+outdir = os.path.dirname("path/outdir")
 bnlist=[]
 endlist=[]
 
@@ -47,8 +45,8 @@ for i in range(len(bnlist)):
 
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/BWAMEMscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i] + " " + outdir +  " " + r9[i] + "\""
-	print "sbatch --partition=LONG /mnt/DATA/home4/arc/hb493/bin/submit_sbatch2.sh"
+	print "export SBATCH_CMD=\"python BWAMEMscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i] + " " + outdir +  " " + r9[i] + "\""
+	print "sbatch --partition=LONG submit_sbatch2.sh"
 	print "export SBATCH_CMD=\"\""
 
 #	print ("python BOWTIEscript.py " + bnlist[i] + " " + r1[i] + " " + r2[i])
