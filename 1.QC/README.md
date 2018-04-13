@@ -13,7 +13,7 @@ This folder contains:
   2. The submission script:  	submitQCscript.py
 
 ## Dependencies:
-This step makes use of two external softwares: 
+This step makes use of the following software(s):
    * Trim-galore (https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) for quality and adapter trimming 
    * Sickle (https://github.com/najoshi/sickle) for adaptive quality trimming
 
