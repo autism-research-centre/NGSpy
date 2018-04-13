@@ -27,7 +27,7 @@ out1 = outdir + "/" + basename + ".r_1_trimmed.fastq"
 out2 = outdir + "/" + basename + ".r_2_trimmed.fastq"
 outs = outdir + "/" + basename + ".single_trimmed.fastq"
 
-cmnd ="/mnt/home3/hb493/bin/sickle pe -f " + f1 + " -r " + f2 + " -t sanger -o " + out1 + " -p " + out2 + " -s " + outs + " -q 20 - l 20"
+cmnd ="sickle pe -f " + f1 + " -r " + f2 + " -t sanger -o " + out1 + " -p " + out2 + " -s " + outs + " -q 20 - l 20"
 print(cmnd)
 os.system(cmnd)
 
@@ -35,7 +35,7 @@ os.system(cmnd)
 # IF R9 is TRUE
 if (r9 == True):
 	outs2 = outdir + "/" + basename + ".SE_trimmed.fastq"
-	cmnd ="/mnt/home3/hb493/bin/sickle se -f " + f9 + " -t sanger -o " + outs2 + " -q 20 - l 20"
+	cmnd ="sickle se -f " + f9 + " -t sanger -o " + outs2 + " -q 20 - l 20"
 	print(cmnd)
 	os.system(cmnd)
 	cmnd2 = " cat " + outs2 + " >> " + outs
@@ -46,12 +46,12 @@ in1 = outdir + "/" + basename + ".r_1_trimmed.fastq"
 in2 = outdir + "/" + basename + ".r_2_trimmed.fastq"
 ints = outdir + "/" + basename + ".single_trimmed.fastq"
 
-cmnd = "/mnt/home3/hb493/bin/trim_galore -o " + outdir + " --paired --illumina --gzip " + in1 + " " + in2
+cmnd = "trim_galore -o " + outdir + " --paired --illumina --gzip " + in1 + " " + in2
 print(cmnd)
 os.system (cmnd)
 
 	
-cmnd =  "/mnt/home3/hb493/bin/trim_galore -o " + outdir + " --illumina --gzip " + ints
+cmnd =  "trim_galore -o " + outdir + " --illumina --gzip " + ints
 print(cmnd)
 os.system (cmnd)
 
@@ -76,7 +76,7 @@ os.system(c2)
 os.system(c3)
 
 
-
+#Exit cleanly
 if (os.path.isfile(no1)):
 	cc1 = "rm " + in1 + " " + in1 + "_trimming_report.txt"
 	os.system(cc1)
