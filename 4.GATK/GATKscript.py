@@ -20,14 +20,9 @@ outdir = sys.argv[3]
 # print(cmnd)
 # os.system(cmnd)
 
-
-# ref = "/mnt/beegfs/home4/arc/hb493/hg38/hg38.fa"
-# knownSNPs = "/mnt/beegfs/home4/arc/hb493/hg38/1000G_phase1.snps.high_confidence.hg38.sorted.vcf.gz"
-# knownIndels = "/mnt/beegfs/home4/arc/hb493/hg38/Mills_and_1000G_gold_standard.indels.hg38.sorted.vcf.gz"
-
-ref = "/mnt/DATA/home4/arc/hb493/hg38/hg38.fa"
-knownSNPs = "/mnt/beegfs/home4/arc/hb493/b37/1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz"
-knownIndels = "/mnt/beegfs/home4/arc/hb493/b37/Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz"
+ref = "GRCh37.fa"
+knownSNPs = "1000G_phase1.snps.high_confidence.b37.sorted.vcf.gz"
+knownIndels = "Mills_and_1000G_gold_standard.indels.b37.sorted.vcf.gz"
 
 #### BASE RECALIBRATION
 #out1 = outdir + "/" + basename + ".QC.MAP.s.MDup.RGr.rMQ.bam"
