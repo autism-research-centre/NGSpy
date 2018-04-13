@@ -32,12 +32,11 @@ cmnd = "varscan  mpileup2snp " + out + " > " + out2 + " --min-var-freq 0.01 --ou
 print(cmnd)
 os.system(cmnd)
 
-
+#index vcf file
 out3 = outdir + "/" + basename + ".VARSCAN.vcf.gz"
 cmnd = "bgzip -c " + out2 + " > " + out3
 print(cmnd)
 os.system(cmnd)
-
 
 cmnd = "tabix -p vcf " + out3
 print(cmnd)
