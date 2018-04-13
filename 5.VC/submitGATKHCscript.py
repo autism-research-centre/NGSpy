@@ -5,8 +5,8 @@ import os.path
 import re
 
 #define input and output folders
-indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF15/output/b37/BWAMEM/GATK/")
-outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF15/output/b37/VC/GATK/")
+indir = os.path.dirname("path/indir") # GATK output dir
+outdir = os.path.dirname("path/outdir")
 
 bnlist=[]
 r=[]
@@ -25,8 +25,8 @@ for file in os.listdir(indir):
 	
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/GATKcallingscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-	print "sbatch --partition=LONG /mnt/DATA/home4/arc/hb493/bin/submit_sbatch6.sh"
+	print "export SBATCH_CMD=\"python GATKcallingscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
+	print "sbatch --partition=LONG submit_sbatch6.sh"
 	print "export SBATCH_CMD=\"\""
 
 
