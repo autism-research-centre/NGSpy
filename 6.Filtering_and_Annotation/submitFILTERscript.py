@@ -5,13 +5,13 @@ import os.path
 import re
 
 #define input and output folders
-indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF20/output/b37/VC/GATK/")
-outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF20/output/b37/VC/FILTER/")
+indir =os.path.dirname("path/indir") #output dir from VC/GATKHC
+outdir = os.path.dirname("path/outdir")
 
 
 bnlist=[]
 r=[]
-# identify mapped.sorted.bam files
+# identify vcf files
 for file in os.listdir(indir):
 	# save the basename  and ending	
 	fbasename = file.split(".GATK.vcf", 1)[0]
@@ -24,8 +24,8 @@ for file in os.listdir(indir):
 
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/FILTERscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-	print "sbatch --partition=LONG /mnt/DATA/home4/arc/hb493/bin/submit_sbatch8.sh"
+	print "export SBATCH_CMD=\"python FILTERscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
+	print "sbatch --partition=LONG submit_sbatch8.sh"
 	print "export SBATCH_CMD=\"\""
 	
 
