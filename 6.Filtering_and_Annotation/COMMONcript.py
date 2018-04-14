@@ -15,7 +15,7 @@ f1=sys.argv[2]
 outdir = sys.argv[3]
 
 
-ref_common = "/mnt/b2/home4/arc/hb493/UKB/hrcukbfreqpruned.v2.vcf.gz"
+ref_common = "hrcukbfreqpruned.v2.vcf.gz"
 
 outcom = outdir + "/" + basename + ".common.vcf"
 outnocom = outdir + "/" + basename + ".no_common.vcf" 
@@ -32,12 +32,12 @@ os.system(cmnd)
 
 
 # COMMON
-cmnd = "/mnt/b2/home4/arc/hb493/bin/vcftools/src/perl/vcf-isec -n +2 " + out2 + " " + ref_common + " > " + outcom
+cmnd = "vcf-isec -n +2 " + out2 + " " + ref_common + " > " + outcom
 print(cmnd)
 os.system(cmnd)
 
 # NON_COMMON
-cmnd = "/mnt/b2/home4/arc/hb493/bin/vcftools/src/perl/vcf-isec -c " + out2 + " " + ref_common + " > " + outnocom
+cmnd = "vcf-isec -c " + out2 + " " + ref_common + " > " + outnocom
 print(cmnd)
 os.system(cmnd)
 
