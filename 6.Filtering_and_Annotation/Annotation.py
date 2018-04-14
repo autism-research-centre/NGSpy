@@ -122,6 +122,6 @@ for g in genelist:
 
 
 
-cmnd = "Rscript /mnt/b2/home4/arc/hb493/scripts/pipB37/Checkped.R " + output_dir + " " + ped_file
+cmnd = "Rscript Checkped.R " + output_dir + " " + ped_file
 print(cmnd)
 os.system(cmnd)
