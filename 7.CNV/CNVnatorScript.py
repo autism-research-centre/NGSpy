@@ -15,7 +15,7 @@ f1 = sys.argv[2]
 outdir = sys.argv[3]
 
 
-ref = "/mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.ordered.fa"
+ref = "Ensembl_GRCh37.ordered.fa"
 
 
 # CNVnator
@@ -25,7 +25,7 @@ ref = "/mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.ordered.fa"
 outroot = outdir + "/" + basename + ".root"
 outcnv = outdir + "/" + basename + ".calls.cnvnator"
 
-# cmnd = "cnvnator -root " + outroot + " -genome GRCh37 -chrom ALL -tree " + f1
+
 # STEP 1 EXTRACT READ MAPPING
 cmnd = "cnvnator -root " + outroot + " -genome " + ref + " -chrom 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X Y -tree " + f1 +  " -d /mnt/DATA/home4/arc/hb493/b37/chrfa -unique"
 print(cmnd)
