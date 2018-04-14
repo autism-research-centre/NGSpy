@@ -11,7 +11,7 @@ outdir = os.path.dirname("path/outdir")
 
 bnlist=[]
 r=[]
-# identify mapped.sorted.bam files
+# identify filtered vcf files
 for file in os.listdir(indir):
 	# save the basename  and ending	
 	fbasename = file.split(".filtered.vcf", 1)[0]
