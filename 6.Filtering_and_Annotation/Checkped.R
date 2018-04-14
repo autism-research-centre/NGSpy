@@ -1,4 +1,7 @@
+#load libraries
 library(stringi)
+#Take arguments
+
 args <- commandArgs(TRUE)
 if (length(args)!=2){
 	stop(" two argument should be supplied (input dir with gene outputs and ped file).n", call.=FALSE)
@@ -7,11 +10,13 @@ if (length(args)!=2){
 	ped_file <-as.character(args[2])
 }
 
-
+#Identify gene files
 gene_files <- list.files(path = indir, pattern = "*.ExAC.xls")
 
+#define col names for result table  Aff_r is the rate of affected individuals with the variants (within the family) and NonAff_r is the rate of non-affected individuals with the variants (within the family) 
 var_table <- c("Vchr", "Vpos", "snp_Eff", "Aff_r", "NonAff_r")
 
+#for each gene, read the file and for every unique variant, match with the pedigree and count variants present in affected and non-affected subjects
 
 for (i in c(1:length(gene_files)))
   {
@@ -38,6 +43,7 @@ for (i in c(1:length(gene_files)))
       }
     }
 }
+#formatting output table
 if (!is.null(dim(var_table)))
 {
   vt <- as.data.frame(var_table)
