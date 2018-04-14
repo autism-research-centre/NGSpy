@@ -5,11 +5,10 @@ import os.path
 import re
 
 #define input and output folders
-indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF18/output/b37/BWAMEM/GATK/")
-outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF18/output/b37/CNV/cnvnator_GATK/")
+indir =os.path.dirname("path/indir") #output dir from the GATK step
+outdir = os.path.dirname("path/outdir")
 
-#indir =os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/PICARD/output/")
-#outdir = os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/CNV/cnvnator")
+
 
 bnlist=[]
 r=[]
@@ -27,19 +26,6 @@ for file in os.listdir(indir):
 
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/pipB37/CNVnatorScript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-	print "sbatch --partition=1604 /mnt/DATA/home4/arc/hb493/bin/submit_sbatch12.sh"
+	print "export SBATCH_CMD=\"python CNVnatorScript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
+	print "sbatch --partition=1604 submit_sbatch12.sh"
 	print "export SBATCH_CMD=\"\""
-
-# for i in range(len(bnlist)):
-# 	print "export SBATCH_CMD=\"\""
-# 	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/PINDELscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-# 	print "sbatch --partition=1604 /mnt/DATA/home4/arc/hb493/bin/submit_sbatch10.sh"
-# 	print "export SBATCH_CMD=\"\""
-# 
-# 
-# for i in range(len(bnlist)):
-# 	print "export SBATCH_CMD=\"\""
-# 	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/DELLYscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-# 	print "sbatch --partition=1604 /mnt/DATA/home4/arc/hb493/bin/submit_sbatch11.sh"
-# 	print "export SBATCH_CMD=\"\""
