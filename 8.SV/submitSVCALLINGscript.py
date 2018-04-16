@@ -24,7 +24,7 @@ for file in os.listdir(indir):
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
 	print "export SBATCH_CMD=\"python BreakDANCERscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-	print "sbatch --partition=1604 /mnt/DATA/home4/arc/hb493/bin/submit_sbatch6.sh"
+	print "sbatch --partition=1604 submit_sbatch6.sh"
 	print "export SBATCH_CMD=\"\""
 
 for i in range(len(bnlist)):
