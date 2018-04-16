@@ -22,60 +22,62 @@ dellyexcl = "/mnt/DATA/home4/arc/hb493/hg38/hg38.delly.excl"
 
 	
 #DELLY
-
+#deletions
 out = outdir + "/" + basename + ".del.bcf"
-cmnd = "/mnt/home3/hb493/delly/src/delly call -t DEL -g " + ref + " -x " +  dellyexcl + " -o " + out  + " " + f1
+cmnd = "delly call -t DEL -g " + ref + " -x " +  dellyexcl + " -o " + out  + " " + f1
 print(cmnd)
 os.system(cmnd)
 
+#bcftools is found in the same src directory as delly after its installation
 outdelly = outdir + "/" + basename + ".delly_del.vcf"
-cmnd = "/mnt/home3/hb493/delly/src/bcftools view " + out + " > " +  outdelly
+cmnd = "bcftools view " + out + " > " +  outdelly
 print(cmnd)
 os.system(cmnd)
 
+#insertions
 out2 = outdir + "/" + basename + ".ins.bcf"
-cmnd = "/mnt/home3/hb493/delly/src/delly call -t INS -g " + ref + " -x " +  dellyexcl + " -o " + out2  + " " + f1
+cmnd = "delly call -t INS -g " + ref + " -x " +  dellyexcl + " -o " + out2  + " " + f1
 print(cmnd)
 os.system(cmnd)
 
 outdelly2 = outdir + "/" + basename + "delly_ins.vcf"
-cmnd = "/mnt/home3/hb493/delly/src/bcftools view " + out2 + " > " +  outdelly2
+cmnd = "bcftools view " + out2 + " > " +  outdelly2
 print(cmnd)
 os.system(cmnd)
 
-	
+#inversions	
 out3 = outdir + "/" + basename + ".inv.bcf"
-cmnd = "/mnt/home3/hb493/delly/src/delly call -t INV -g " + ref + " -x " +  dellyexcl + " -o " + out3  + " " + f1
+cmnd = "delly call -t INV -g " + ref + " -x " +  dellyexcl + " -o " + out3  + " " + f1
 print(cmnd)
 os.system(cmnd)
 
 outdelly3 = outdir + "/" + basename + "delly_inv.vcf"
-cmnd = "/mnt/home3/hb493/delly/src/bcftools view " + out3 + " > " +  outdelly3
+cmnd = "bcftools view " + out3 + " > " +  outdelly3
 print(cmnd)
 os.system(cmnd)
 
 
-	
+#duplications	
 out4 = outdir + "/" + basename + ".dup.bcf"
-cmnd = "/mnt/home3/hb493/delly/src/delly call -t DUP -g " + ref + " -x " +  dellyexcl + " -o " + out4  + " " + f1
+cmnd = "delly call -t DUP -g " + ref + " -x " +  dellyexcl + " -o " + out4  + " " + f1
 print(cmnd)
 os.system(cmnd)
 
 outdelly4 = outdir + "/" + basename + "delly_dup.vcf"
-cmnd = "/mnt/home3/hb493/delly/src/bcftools view " + out4 + " > " +  outdelly4
+cmnd = "bcftools view " + out4 + " > " +  outdelly4
 print(cmnd)
 os.system(cmnd)
 
 
 
-
+#Translocations
 out5 = outdir + "/" + basename + ".tra.bcf"
-cmnd = "/mnt/home3/hb493/delly/src/delly call -t TRA -g " + ref + " -x " +  dellyexcl + " -o " + out5  + " " + f1
+cmnd = "delly call -t TRA -g " + ref + " -x " +  dellyexcl + " -o " + out5  + " " + f1
 print(cmnd)
 os.system(cmnd)
 
 outdelly5 = outdir + "/" + basename + "delly.tra.vcf"
-cmnd = "/mnt/home3/hb493/delly/src/bcftools view " + out5 + " > " +  outdelly5
+cmnd = "bcftools view " + out5 + " > " +  outdelly5
 print(cmnd)
 os.system(cmnd)
 
