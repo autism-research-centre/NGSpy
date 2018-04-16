@@ -15,7 +15,7 @@ f1 = sys.argv[2]
 outdir = sys.argv[3]
 
 
-ref = "/mnt/DATA/home4/arc/hb493/hg38/hg38.fa"
+ref = "ref.fa"
 
 
 
