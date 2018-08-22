@@ -5,11 +5,10 @@ import os.path
 import re
 
 #define input and output folders
-indir =os.path.dirname("/mnt/DATA/home4/arc/hb493/GF16/output/b37/BWAMEM/GATK/")
-outdir = os.path.dirname("/mnt/DATA/home4/arc/hb493/GF16/output/b37/SV/")
+indir =os.path.dirname("path/indir")
+outdir = os.path.dirname("path/outdir")
 
-#indir =os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/PICARD/output/")
-#outdir = os.path.dirname("/mnt/b2/home4/arc/hb493/Rimma_fastq/CNV/cnvnator")
+
 
 bnlist=[]
 r=[]
@@ -27,6 +26,6 @@ for file in os.listdir(indir):
 
 for i in range(len(bnlist)):
 	print "export SBATCH_CMD=\"\""
-	print "export SBATCH_CMD=\"python /mnt/DATA/home4/arc/hb493/scripts/pipB37/BRKDNCRscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
-	print "sbatch --partition=1604 /mnt/DATA/home4/arc/hb493/bin/submit_sbatch16.sh"
+	print "export SBATCH_CMD=\"python path/BREAKKDANCERscript.py " + bnlist[i] + " " + r[i] + " " + outdir + "\""
+	print "sbatch --partition=1604 path/submit_sbatch16.sh"
 	print "export SBATCH_CMD=\"\""
