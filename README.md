@@ -53,10 +53,9 @@ ALL |-| samtools (currently running with Version: 0.1.19)|  -
 " | " | Pindel | -
 " | " | Delly | -
 " | CNV | CNVnator | root
-" | " |erds (version 1.1)|
- 
-6-Filtering and Annotation | Genome Analysis ToolKit (version 3.7-0)|    -
-" |SNPEff (version 4.3) | - 
+" | " |erds (version 1.1)|-
+6-Filtering and Annotation | SNV |Genome Analysis ToolKit (version 3.7-0)|    -
+" | " | SNPEff (version 4.3) | - 
 
 ## Data Requirements
 
