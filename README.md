@@ -38,15 +38,15 @@ Each of these steps has a dedicated python script meant to be submitted in a hig
 
 The pipeline has several software dependencies which may also have secondary dependencies
 
-Stage || Dependencies    | Secondary dependencies
------------- || -------------| ---------------
-ALL || samtools (currently running with Version: 0.1.19)|  -     
-0-CONVERT || bam2fastx |     -       
-1-QC      || sickle |       -       
-   "     || trim-galore | cutadapt
-2-Mapping || bwa-mem (version 0.6 or higher)|     -       
-3-PICARD || PICARD tools |     -     
-4-GATK || Genome Analysis ToolKit (version 3.7-0)|    -    
+Stage |-| Dependencies    | Secondary dependencies
+------------ |-| -------------| ---------------
+ALL |-| samtools (currently running with Version: 0.1.19)|  -     
+0-CONVERT |-| bam2fastx |     -       
+1-QC      |-| sickle |       -       
+   "     |-| trim-galore | cutadapt
+2-Mapping |-| bwa-mem (version 0.6 or higher)|     -       
+3-PICARD |-| PICARD tools |     -     
+4-GATK |-| Genome Analysis ToolKit (version 3.7-0)|    -    
 5-VC |SNV| Genome Analysis ToolKit (version 3.7-0)|    -
   "  | " |VARSCAN (version 2.3)|   -
 " | SV | Breakdancer | - 
