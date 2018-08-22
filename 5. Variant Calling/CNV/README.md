@@ -13,7 +13,7 @@ We then combine both methods.
 This folder contains:
   1. The main scripts:  	CNVNATORscript.py (and ERDSscript.py)
   2. The submission scripts:  	submitCNVNATORscript.py (and submitERDSscript.py)
-  3. An R script to merge callsfrom both methodologies: CNVmerge.R
+
   
 
 ## Dependencies:
