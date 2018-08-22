@@ -16,7 +16,7 @@ f1 = sys.argv[2]
 outdir = sys.argv[3]
 
 
-ref = "/mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.fa"
+ref = "ref.fa"
 
 
 
@@ -24,13 +24,13 @@ ref = "/mnt/DATA/home4/arc/hb493/b37/Ensembl_GRCh37.fa"
 
 #STEP 1 : Generates a config file for breakdancer to work properly
 out = outdir + "/" + basename + ".breakdancer.cfg"
-cmnd = "/mnt/DATA/home4/arc/hb493/bin/bam2cfg.pl " + f1 + " > " +  out
+cmnd = "path/bam2cfg.pl " + f1 + " > " +  out
 print(cmnd)
 os.system(cmnd)
 
 
 # STEP 2: run Breakdancer
 out2 = outdir + "/" + basename + ".breakdancer.sv"
-cmnd = "/mnt/DATA/home4/arc/hb493/bin/breakdancer-max " + out + " > " + out2
+cmnd = "/path/breakdancer-max " + out + " > " + out2
 print(cmnd)
 os.system(cmnd)
