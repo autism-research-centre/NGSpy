@@ -1,14 +1,14 @@
 # FILTERING and ANNOTATION  
 
-This step consists on performing a primary filtering step to the original variants obtained from the previous steps of the pipeline.
-Additionaly, scripts for spliting the variants into variants belonging to a common set (UK biobank) and non-common in the sense they are not reported in the set of common variants.
-Finally, a primary annotation of the variants as well as a selection of variants with a Mendelian pattern of inheritance within the families are performed.
+This section contains the primary filtering step for the original variants obtained from the previous steps of the pipeline.
+Additionaly, it includes the description of how to split the variants into variants belonging to a common set (UK biobank) and non-common in the sense they are not reported in the set of common variants.
+Finally, a primary annotation of the variants as well as a selection of variants with a Mendelian pattern of inheritance within the families is also included.
 
 This folder contains:
   1. The FILTER scripts: 
         * FILTERscript.py 
         * submitFILTERscript.py
-  2. The COMMON scripts that seleects common variants
+  2. The COMMON scripts that splits the variants dataset into a set of common variants and a set of non-common variants. 
         * COMMONscript.py 
         * submitCOMMONscript.py
   3. The Annotation scripts:
